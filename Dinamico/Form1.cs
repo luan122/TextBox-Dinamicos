@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Dinamico
@@ -33,19 +27,19 @@ namespace Dinamico
                     novo.Text = novo.Name;
                     Point p = new Point(txtExistente.Location.X, txtExistente.Location.Y + 26);
                     novo.Location = p;
-                    this.Controls.Add(novo);
+                    Controls.Add(novo);
                 }
                 else
                 {
                     string nomeAntes = nomeCaixa + (i - 1);
-                    Control[] matches = this.Controls.Find(nomeAntes, true);
+                    Control[] matches = Controls.Find(nomeAntes, true);
                     TextBox tb = (TextBox)matches[0];
                     TextBox novo = new TextBox();
                     novo.Name = nomeCaixa + i;
                     novo.Text = novo.Name;
                     Point p = new Point(tb.Location.X, tb.Location.Y + 26);
                     novo.Location = p;
-                    this.Controls.Add(novo);
+                    Controls.Add(novo);
                 }
                 i++;
                 xx++;
@@ -69,9 +63,9 @@ namespace Dinamico
             while(xx < ii)
             {
                 string nomeAntes = nomeCaixa + (i - 1);
-                Control[] matches = this.Controls.Find(nomeAntes, true);
+                Control[] matches = Controls.Find(nomeAntes, true);
                 TextBox tb = (TextBox)matches[0];
-                this.Controls.Remove(tb);
+                Controls.Remove(tb);
                 xx++;
                 i--;
             }
